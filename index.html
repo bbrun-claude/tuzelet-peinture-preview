@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SARL Tuzelet — Peinture &amp; Décoration à Angers et Cholet (49)</title>
+<meta name="description" content="Entreprise de peinture intérieure et extérieure, décoration et ravalement de façade près d'Angers et Cholet. Artisan peintre depuis plus de 20 ans en Maine-et-Loire.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--orange:#D97706;--dark:#1A1A1A;--grey:#4A4A4A;--light:#F7F5F2;--white:#FFFFFF}
+body{font-family:'Source Sans 3',sans-serif;color:var(--dark);line-height:1.6}
+h1,h2,h3{font-family:'Sora',sans-serif;font-weight:700}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,26,26,0.95);backdrop-filter:blur(8px);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:70px}
+nav img{height:55px}
+nav ul{list-style:none;display:flex;gap:2rem}
+nav a{color:var(--white);text-decoration:none;font-size:.95rem;font-weight:600;font-family:'Sora',sans-serif;transition:color .3s}
+nav a:hover{color:var(--orange)}
+.nav-tel{color:var(--orange)!important;font-size:1rem}
+.menu-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+
+/* HERO */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('img/hero.jpg') center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,26,26,0.85) 0%,rgba(26,26,26,0.5) 60%,rgba(217,119,6,0.15) 100%)}
+.hero-content{position:relative;z-index:2;max-width:700px;padding:8rem 2rem 4rem;margin-left:8%}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);color:var(--white);line-height:1.15;margin-bottom:1rem}
+.hero h1 span{color:var(--orange)}
+.hero p{color:rgba(255,255,255,0.85);font-size:1.15rem;margin-bottom:2rem;max-width:550px}
+.btn{display:inline-block;padding:.9rem 2.2rem;font-family:'Sora',sans-serif;font-weight:600;font-size:.95rem;border-radius:4px;text-decoration:none;transition:all .3s}
+.btn-primary{background:var(--orange);color:var(--white)}
+.btn-primary:hover{background:#B45309;transform:translateY(-2px)}
+.btn-outline{border:2px solid var(--white);color:var(--white);margin-left:1rem}
+.btn-outline:hover{background:var(--white);color:var(--dark)}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+.container{max-width:1100px;margin:0 auto}
+.section-title{text-align:center;margin-bottom:3rem}
+.section-title h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:.5rem}
+.section-title .accent{display:block;width:60px;height:4px;background:var(--orange);margin:.8rem auto 0}
+
+/* PRESTATIONS */
+.prestations{background:var(--light)}
+.presta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.presta-card{background:var(--white);border-radius:8px;padding:2rem;box-shadow:0 2px 15px rgba(0,0,0,0.06);transition:transform .3s,box-shadow .3s;border-top:4px solid var(--orange)}
+.presta-card:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(0,0,0,0.1)}
+.presta-icon{font-size:2.2rem;margin-bottom:1rem}
+.presta-card h3{font-size:1.15rem;margin-bottom:.5rem}
+.presta-card p{color:var(--grey);font-size:.95rem}
+
+/* GALERIE */
+.galerie-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.galerie-item{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/3}
+.galerie-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.galerie-item:hover img{transform:scale(1.05)}
+.galerie-item .caption{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(transparent,rgba(26,26,26,0.8));color:var(--white);font-weight:600;font-family:'Sora',sans-serif;font-size:.9rem}
+
+/* ATOUTS */
+.atouts{background:var(--dark);color:var(--white)}
+.atouts h2{color:var(--white)}
+.atouts .accent{background:var(--orange)}
+.atouts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;text-align:center}
+.atout-item{padding:1.5rem}
+.atout-number{font-family:'Sora',sans-serif;font-size:2.5rem;font-weight:700;color:var(--orange);display:block;margin-bottom:.5rem}
+.atout-item p{color:rgba(255,255,255,0.8);font-size:.95rem}
+
+/* ZONE */
+.zone{background:var(--light)}
+.zone-content{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.zone-text h2{font-size:1.8rem;margin-bottom:1rem}
+.zone-text p{color:var(--grey);margin-bottom:1rem}
+.zone-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.zone-list li{padding:.3rem 0;padding-left:1.5rem;position:relative;color:var(--grey)}
+.zone-list li::before{content:"\2713";position:absolute;left:0;color:var(--orange);font-weight:700}
+.zone-map{border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+.zone-map iframe{width:100%;height:350px;border:0}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,var(--orange),#B45309);color:var(--white);text-align:center}
+.cta h2{color:var(--white);font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:1rem}
+.cta p{font-size:1.1rem;margin-bottom:2rem;opacity:.9}
+.cta .btn{background:var(--white);color:var(--dark);font-size:1.05rem;padding:1rem 2.5rem}
+.cta .btn:hover{background:var(--dark);color:var(--white)}
+.cta-tel{display:block;margin-top:1rem;color:var(--white);font-size:1.3rem;font-family:'Sora',sans-serif;font-weight:700;text-decoration:none}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:3rem 2rem 1.5rem;text-align:center}
+footer .footer-logo{height:60px;margin-bottom:1rem}
+footer p{font-size:.85rem;margin-bottom:.3rem}
+footer a{color:var(--orange);text-decoration:none}
+footer .legal{margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);font-size:.8rem}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav ul{display:none;position:absolute;top:70px;left:0;right:0;background:rgba(26,26,26,0.98);flex-direction:column;padding:1rem 2rem;gap:1rem}
+  nav ul.open{display:flex}
+  .menu-toggle{display:block}
+  .hero-content{margin-left:0;padding:7rem 1.5rem 3rem}
+  .btn-outline{margin-left:0;margin-top:.8rem;display:inline-block}
+  .zone-content{grid-template-columns:1fr}
+  .zone-list{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <img src="img/logo.jpg" alt="SARL Tuzelet">
+  <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+  <ul>
+    <li><a href="#prestations">Prestations</a></li>
+    <li><a href="#realisations">Réalisations</a></li>
+    <li><a href="#atouts">Pourquoi nous</a></li>
+    <li><a href="#zone">Zone</a></li>
+    <li><a href="tel:0241459754" class="nav-tel">02 41 45 97 54</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Votre artisan <span>peintre</span> depuis plus de 20 ans</h1>
+    <p>Peinture intérieure et extérieure, décoration, revêtements muraux et sols, ravalement de façade. Deux agences près d'Angers et Cholet en Maine-et-Loire.</p>
+    <a href="tel:0241459754" class="btn btn-primary">Demander un devis</a>
+    <a href="#realisations" class="btn btn-outline">Nos réalisations</a>
+  </div>
+</section>
+
+<section class="prestations" id="prestations">
+  <div class="container">
+    <div class="section-title">
+      <h2>Nos prestations</h2>
+      <span class="accent"></span>
+    </div>
+    <div class="presta-grid">
+      <div class="presta-card">
+        <div class="presta-icon">&#127912;</div>
+        <h3>Peinture intérieure</h3>
+        <p>Murs, plafonds, boiseries : nous réalisons tous vos travaux de peinture pour donner vie à vos espaces de vie et professionnels.</p>
+      </div>
+      <div class="presta-card">
+        <div class="presta-icon">&#127960;</div>
+        <h3>Ravalement de façade</h3>
+        <p>Nettoyage, traitement et mise en peinture de vos façades pour protéger et embellir votre habitation ou commerce.</p>
+      </div>
+      <div class="presta-card">
+        <div class="presta-icon">&#128204;</div>
+        <h3>Revêtements muraux</h3>
+        <p>Papiers peints, toile de verre, enduits décoratifs : nous posons tous types de revêtements pour personnaliser vos intérieurs.</p>
+      </div>
+      <div class="presta-card">
+        <div class="presta-icon">&#9632;</div>
+        <h3>Revêtements de sol</h3>
+        <p>Parquet, vinyle, moquette, carrelage : pose soignée de tous revêtements de sol adaptés à vos besoins et votre budget.</p>
+      </div>
+      <div class="presta-card">
+        <div class="presta-icon">&#10024;</div>
+        <h3>Décoration d'intérieur</h3>
+        <p>Conseils en couleurs, agencement, harmonies : un accompagnement personnalisé pour créer l'ambiance qui vous ressemble.</p>
+      </div>
+      <div class="presta-card">
+        <div class="presta-icon">&#128736;</div>
+        <h3>Rénovation complète</h3>
+        <p>De la préparation des supports à la finition, nous prenons en charge l'intégralité de vos projets de rénovation intérieure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="realisations">
+  <div class="container">
+    <div class="section-title">
+      <h2>Nos réalisations</h2>
+      <span class="accent"></span>
+    </div>
+    <div class="galerie-grid">
+      <div class="galerie-item">
+        <img src="img/hero.jpg" alt="Rénovation intérieure avec poutres apparentes" loading="lazy">
+        <div class="caption">Rénovation intérieure — poutres et pierres apparentes</div>
+      </div>
+      <div class="galerie-item">
+        <img src="img/salon.jpg" alt="Salon contemporain gris et blanc" loading="lazy">
+        <div class="caption">Salon contemporain — tons gris et blanc</div>
+      </div>
+      <div class="galerie-item">
+        <img src="img/decoration.jpg" alt="Décoration d'escalier" loading="lazy">
+        <div class="caption">Cage d'escalier — peinture et décoration</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="atouts" id="atouts">
+  <div class="container">
+    <div class="section-title">
+      <h2>Pourquoi choisir Tuzelet</h2>
+      <span class="accent"></span>
+    </div>
+    <div class="atouts-grid">
+      <div class="atout-item">
+        <span class="atout-number">20+</span>
+        <p>Années d'expérience en peinture et décoration en Maine-et-Loire</p>
+      </div>
+      <div class="atout-item">
+        <span class="atout-number">2</span>
+        <p>Agences à votre service près d'Angers et de Cholet</p>
+      </div>
+      <div class="atout-item">
+        <span class="atout-number">100%</span>
+        <p>Devis gratuit et personnalisé pour chaque projet</p>
+      </div>
+      <div class="atout-item">
+        <span class="atout-number">&#9733;</span>
+        <p>Satisfaction client et qualité de finition au coeur de notre métier</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="zone" id="zone">
+  <div class="container">
+    <div class="zone-content">
+      <div class="zone-text">
+        <h2>Notre zone d'intervention</h2>
+        <p>Implantés à Juigné-sur-Loire (près d'Angers) et à Saint-André-de-la-Marche (près de Cholet), nous intervenons dans tout le Maine-et-Loire et les départements limitrophes.</p>
+        <ul class="zone-list">
+          <li>Angers et agglomération</li>
+          <li>Cholet et environs</li>
+          <li>Les Garennes sur Loire</li>
+          <li>Juigné-sur-Loire</li>
+          <li>Saint-André-de-la-Marche</li>
+          <li>Saumur</li>
+          <li>Beaupréau-en-Mauges</li>
+          <li>Chemillé-en-Anjou</li>
+        </ul>
+      </div>
+      <div class="zone-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86817.4!2d-0.6!3d47.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4806411d2e99e8e5%3A0x40c14484fbcfca0!2sLes%20Garennes%20sur%20Loire!5e0!3m2!1sfr!2sfr" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation SARL Tuzelet"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Un projet de peinture ou de décoration ?</h2>
+    <p>Contactez-nous pour un devis gratuit et personnalisé. Notre équipe est à votre écoute pour concrétiser vos envies.</p>
+    <a href="tel:0241459754" class="btn">Appeler maintenant</a>
+    <a href="tel:0241459754" class="cta-tel">02 41 45 97 54</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <img src="img/logo.jpg" alt="SARL Tuzelet" class="footer-logo">
+    <p><strong>SARL Tuzelet</strong> — Peinture, décoration, revêtements</p>
+    <p>Juigné-sur-Loire (Angers) &amp; Saint-André-de-la-Marche (Cholet)</p>
+    <p><a href="tel:0241459754">02 41 45 97 54</a></p>
+    <div class="legal">
+      <p>&copy; 2025 SARL Tuzelet — Tous droits réservés — SIRET 453 859 407</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
